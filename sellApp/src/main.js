@@ -3,20 +3,36 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import IndexPage from './components/IndexPage'
+import Goods from './components/conents/Goods'
+import Ratings from './components/conents/Ratings'
+import Seller from './components/conents/Seller'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-/* eslint-disable no-new */
+
 let router = new VueRouter({
+  linkActiveClass: 'active',
   mode: 'history',
   routes: [
     {
-      path: '/appa',
-      component: IndexPage
+      path: '/',
+      redirect: 'goods'
+    },
+    {
+      path: '/goods',
+      component: Goods
+    },
+    {
+      path: '/ratings',
+      component: Ratings
+    },
+    {
+      path: '/seller',
+      component: Seller
     }
   ]
 })
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

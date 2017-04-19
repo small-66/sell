@@ -1,11 +1,14 @@
 <template>
-  <div class="hello">index--hello</div>
+  <div class="header">
+      Header
+  </div>
 </template>
 
 <script>
   export default {
     data () {
       return {
+
       }
     }
   }
