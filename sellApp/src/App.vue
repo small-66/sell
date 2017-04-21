@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <m-header></m-header>
+    <m-header :seller="seller"></m-header>
     <div class="tab">
       <router-link to="goods" tag="a" class="tab-item">
         商品
@@ -16,16 +16,26 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import mHeader from './components/header/header'
+const ERR_OK = 0
 export default {
-  data () {
+  components: {
+    mHeader
+  },
+  data() {
     return {
       seller: {}
     }
   },
-  components: {
-    mHeader
+  created() {
+    this.$http.get('/api/seller').then((response) => {
+      response = response.body
+      if (response.errno === ERR_OK) {
+        this.seller = response.data
+        console.log(this.seller)
+      }
+    })
   }
 }
 </script>

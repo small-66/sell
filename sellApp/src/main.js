@@ -3,12 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import Goods from './components/conents/Goods'
 import Ratings from './components/conents/Ratings'
 import Seller from './components/conents/Seller'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
 let router = new VueRouter({
   linkActiveClass: 'active',
