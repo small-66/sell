@@ -39,7 +39,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
   .header {
-    color: #fff;
+    color: rgb(255,255,255);
     background: rgba(7,17,27,.5);
   }
   .content-wrap{
@@ -57,6 +57,8 @@
   }
   .title{
     margin: 2px 0 8px 0;
+    font-weight: bold;
+    line-height: 18px;
   }
   .brand{
     width: 30px;
