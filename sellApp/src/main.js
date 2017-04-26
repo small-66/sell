@@ -7,6 +7,7 @@ import VueResource from 'vue-resource'
 import Goods from './components/conents/Goods'
 import Ratings from './components/conents/Ratings'
 import Seller from './components/conents/Seller'
+import './common/styuls/index.styl'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)

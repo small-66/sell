@@ -11,11 +11,14 @@
         </div>
         <div class="description">{{ seller.description }}/{{ seller.deliveryTime }}分钟送达</div>
         <div v-if="seller.supports" class="support">
-          <span class="icon"></span>
+          <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{ seller.supports[0].description }}</span>
         </div>
       </div>
-
+      <div v-if="seller.supports" class="support-count">
+        <span class="count">{{ seller.supports.length }}个</span>
+        <i class="icon-keyboard_arrow_right"></i>
+      </div>
     </div>
     <div class="bulletin-wrap"></div>
   </div>
@@ -28,6 +31,9 @@
         type: Object
       }
     },
+    created() {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+    },
     data() {
       return {
 
@@ -37,34 +43,34 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
-  .header {
-    color: rgb(255,255,255);
-    background: rgba(7,17,27,.5);
-  }
-  .content-wrap{
-    padding: 24px 12px 18px 24px;
-    font-size: 0;
-  }
-  .avatar{
-    display: inline-block;
-    font-size: 14px;
-  }
-  .content{
-    display: inline-block;
-    font-size: 14px;
-    margin-left: 16px;
-  }
-  .title{
-    margin: 2px 0 8px 0;
-    font-weight: bold;
-    line-height: 18px;
-  }
-  .brand{
-    width: 30px;
-    height: 18px;
-    display: inline-block;
-    background: url("brand@2x.png") no-repeat;
-    background-size: 30px 18px ;
-  }
+<style lang="stylus" rel="stylesheet/stylus">
+  .header
+    color: rgb(255,255,255)
+    background: rgba(7,17,27,.5)
+    .content-wrap
+      padding: 24px 12px 18px 24px
+      font-size: 0
+      position: relative
+      .avatar
+        display: inline-block
+        font-size: 14px
+        vertical-align: top
+        .avatar img
+          border-radius: 2px
+      .content
+        display: inline-block
+        font-size: 14px
+        margin-left: 16px
+        .title
+          margin: 2px 0 8px 0
+          font-weight: bold
+          line-height: 18px
+          .brand
+            width: 30px
+            height: 18px
+            display: inline-block
+            background: url("brand@2x.png") no-repeat
+            background-size: 30px 18px
+            vertical-align: top
+
 </style>
