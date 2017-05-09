@@ -19,6 +19,9 @@
         </div>
       </div>
     </div>
+    <div class="ball-container">
+      <div v-for="ball in balls" :key="ball" v-show="ball.show" class="ball"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -37,6 +40,27 @@
       minPrice: {
         type: Number,
         default: 0
+      }
+    },
+    data() {
+      return {
+        balls: [
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          }
+        ]
       }
     },
     computed: {
@@ -156,4 +180,22 @@
             background: #00b43c
             color: #fff
 
+    .ball-container
+      .ball
+        position: fixed
+        left: 32px
+        bottom: 22px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: rgb(0,160,220)
+        z-index: 200
+      /*.drop-enter-active
+        transition: all .4s linear
+      .drop-leave-active
+        transition: all .4s linear
+      .drop-enter
+        transform: translateY(30px);
+      .drop-leave-active
+        transform: translateY(30px);*/
 </style>

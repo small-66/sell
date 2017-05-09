@@ -42,7 +42,7 @@
       </ul>
     </div>
     <shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice"
-              :min-price="seller.minPrice"></shopcart>
+              :min-price="seller.minPrice" ></shopcart>
   </div>
 </template>
 <script>
